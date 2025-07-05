@@ -29,11 +29,11 @@ Meridian uses Solana as a high-speed "Hub" for all state and business logic, and
 
 ```mermaid
 graph TD
-    A[User on Ethereum] -->|1. Deposits WETH| B(EVM Spoke Contract);
-    B -->|2. Sends LZ Message| C{LayerZero V2 Network};
-    C -->|3. Relays Message| D(Solana Hub Program);
-    D -->|4. Credits Collateral & Creates Loan| E(User's Profile on Solana);
-    E -->|5. Borrows USDC| A;
+    A[User on Ethereum] -->|Deposit WETH| B(EVM Spoke Contract)
+    B -->|Send LZ Msg| C(LayerZero V2 Network)
+    C -->|Relay Msg| D(Solana Hub Program)
+    D -->|Credit Collateral & Create Loan| E(User's Profile on Solana)
+    E -->|Borrow USDC| A
 
     subgraph Ethereum
         A
@@ -44,6 +44,7 @@ graph TD
         D
         E
     end
+
 ```
 
 ## Tech Stack
